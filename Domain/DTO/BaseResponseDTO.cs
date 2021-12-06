@@ -1,9 +1,7 @@
 ﻿
-namespace Domain.DTO
+namespace Domain.DTO;
+public class BaseResponseDTO
 {
-    public class BaseResponseDTO
-    {
-        public bool IsSuccess { get; set; }
-        public string[] Errors { get; set; }
-    }
+    public bool IsSuccess { get; set; }
+    public string[] Errors { get; set; }
 }

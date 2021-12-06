@@ -1,10 +1,9 @@
 ﻿using Domain.Data.Repositories;
 
-namespace Domain.Data
+namespace Domain.Data;
+public interface IUnitOfWork
 {
-    public interface IUnitOfWork
-    {
-        IGenreRepository Genres { get; }
-        Task CommitAsync();
-    }
+    IGenreRepository Genres { get; }
+    Task CommitAsync();
 }
+

@@ -1,42 +1,14 @@
 ﻿using Appllication.Genres;
 using Domain.DTO;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
-namespace API.Controllers
+namespace API.Controllers;
+public class GenreController : HomeController
 {
-    public class GenreController : HomeController
+    [HttpGet]
+    public async Task<ActionResult<List<GenreDTO>>> Get()
     {
-        private readonly IMediator _mediator;
-
-        public GenreController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
-        [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<GenreDTO>), (int)HttpStatusCode.OK)]
-        [ProducesErrorResponseType(typeof(BaseResponseDTO))]
-        public async Task<IActionResult> Get()
-        {
-            try
-            {
-                var query = new GetAllGenresQuery();
-
-                // get response
-                var response = await _mediator.Send(query);
-
-                // use it
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
-            // create request
-          
-        }
+        return Ok(await Mediator.Send(new GetGenres.Query()));
     }
 }
+

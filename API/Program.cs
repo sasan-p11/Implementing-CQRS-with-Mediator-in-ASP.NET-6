@@ -17,7 +17,7 @@ builder.Services.AddDbContext<DataContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-builder.Services.AddMediatR(typeof(GetAllGenresQueryHandler).GetTypeInfo().Assembly);
+builder.Services.AddMediatR(typeof(GetGenres).GetTypeInfo().Assembly);
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
