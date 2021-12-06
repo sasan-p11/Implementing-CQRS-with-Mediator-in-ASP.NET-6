@@ -1,7 +1,10 @@
 
 using Appllication.Genres;
 using Appllication.Mapper;
+using Appllication.Validators;
 using Domain.Data;
+using Domain.DTO;
+using FluentValidation;
 using Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -11,14 +14,15 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCors();
+//builder.Services.AddCors();
 builder.Services.AddDbContext<DataContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-builder.Services.AddMediatR(typeof(GetGenres).GetTypeInfo().Assembly);
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddMediatR(typeof(List.Handler).GetTypeInfo().Assembly);
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
+builder.Services.AddTransient<IValidator<CreateGenreDTO>, CreateGenreDTOValidator>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
