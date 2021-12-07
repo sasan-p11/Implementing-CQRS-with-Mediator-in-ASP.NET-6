@@ -1,6 +1,7 @@
 ﻿using Appllication.Exeption;
 using Appllication.Genres;
 using Domain.DTO;
+using Domain.DTO.GenresDTO;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -27,6 +28,45 @@ public class GenreController : HomeController
             var command = new Create.Command(model);
             var response = await Mediator.Send(command);
             return StatusCode((int)HttpStatusCode.Created, response);
+        }
+        catch (InvalidRequestBodyException ex)
+        {
+            return BadRequest(new BaseResponseDTO
+            {
+                IsSuccess = false,
+                Errors = ex.Errors
+            });
+        }
+    }
+
+    [HttpPut("{id:int}")]
+    public async Task<ActionResult<int>> Edit(int id, [FromBody] EditGenreDTO model)
+    {
+        model.Id = id;
+        try
+        {
+            var command = new Edit.Command(model);
+            var response = await Mediator.Send(command);
+            return StatusCode((int)HttpStatusCode.OK, response);
+        }
+        catch (InvalidRequestBodyException ex)
+        {
+            return BadRequest(new BaseResponseDTO
+            {
+                IsSuccess = false,
+                Errors = ex.Errors
+            });
+        }
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult<int>> Delete(int id)
+    {
+        try
+        {
+            var command = new Delete.Command(id);
+            var response = await Mediator.Send(command);
+            return StatusCode((int)HttpStatusCode.OK, response);
         }
         catch (InvalidRequestBodyException ex)
         {

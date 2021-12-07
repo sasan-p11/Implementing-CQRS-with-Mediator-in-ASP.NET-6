@@ -1,12 +1,22 @@
-﻿using Domain.DTO;
+﻿using Domain.DTO.GenresDTO;
 using FluentValidation;
 
 namespace Appllication.Validators;
-public class CreateGenreDTOValidator : AbstractValidator<CreateGenreDTO>
+public class GenreDTOValidator : AbstractValidator<GenreDTO>
 {
-    public CreateGenreDTOValidator()
+    public class CreateGenreDTOValidator : AbstractValidator<CreateGenreDTO>
     {
-        RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
+        public CreateGenreDTOValidator()
+        {
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
+        }
+    }
+    public class EditGenreDTOValidator : AbstractValidator<EditGenreDTO>
+    {
+        public EditGenreDTOValidator()
+        {
+            RuleFor(x => x.Id).NotEmpty().WithMessage("Id is required");
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
+        }
     }
 }
-

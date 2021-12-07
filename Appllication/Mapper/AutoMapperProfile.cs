@@ -1,7 +1,7 @@
 ﻿
 using AutoMapper;
 using Domain.Data.Entities;
-using Domain.DTO;
+using Domain.DTO.GenresDTO;
 
 namespace Appllication.Mapper;
 

@@ -3,8 +3,9 @@ using Appllication.Genres;
 using Appllication.Mapper;
 using Appllication.Validators;
 using Domain.Data;
-using Domain.DTO;
+using Domain.DTO.GenresDTO;
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,9 @@ builder.Services.AddDbContext<DataContext>(opt =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddMediatR(typeof(List.Handler).GetTypeInfo().Assembly);
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
-builder.Services.AddTransient<IValidator<CreateGenreDTO>, CreateGenreDTOValidator>();
+//builder.Services.AddScoped(typeof(IValidator), typeof(GenreDTOValidator));;
+builder.Services.AddMvc()
+  .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<GenreDTOValidator>());
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

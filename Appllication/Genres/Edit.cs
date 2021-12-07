@@ -1,4 +1,3 @@
-﻿
 using Appllication.Exeption;
 using Domain.Data;
 using Domain.Data.Entities;
@@ -7,12 +6,12 @@ using FluentValidation;
 using MediatR;
 
 namespace Appllication.Genres;
-public class Create
+public class Edit
 {
     public class Command : IRequest
-    { 
-        public CreateGenreDTO Model { get; }
-        public Command(CreateGenreDTO model)
+    {
+        public EditGenreDTO Model { get; }
+        public Command(EditGenreDTO model)
         {
             this.Model = model;
         }
@@ -21,9 +20,9 @@ public class Create
     public class Handler : IRequestHandler<Command>
     {
         private readonly IUnitOfWork _repository;
-        private readonly IValidator<CreateGenreDTO> _validator;
+        private readonly IValidator<EditGenreDTO> _validator;
 
-        public Handler(IUnitOfWork repository, IValidator<CreateGenreDTO> validator)
+        public Handler(IUnitOfWork repository, IValidator<EditGenreDTO> validator)
         {
             _repository = repository;
             _validator = validator;
@@ -31,7 +30,7 @@ public class Create
 
         public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
         {
-            CreateGenreDTO model = request.Model;
+            var model = request.Model;
 
             var result = _validator.Validate(model);
 
@@ -43,13 +42,14 @@ public class Create
                     Errors = errors
                 };
             }
-
+            
             var entity = new Genre
             {
+                Id = (int)model.Id,
                 Name = model.Name,
             };
 
-            _repository.Genres.Add(entity);
+            _repository.Genres.Update(entity);
             await _repository.CommitAsync();
 
             return Unit.Value;

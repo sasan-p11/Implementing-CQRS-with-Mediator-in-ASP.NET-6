@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Domain.Data;
-using Domain.DTO;
+using Domain.DTO.GenresDTO;
 using MediatR;
 
 namespace Appllication.Genres;
