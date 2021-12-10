@@ -15,6 +15,7 @@ public class DataContext : DbContext
     }
 
     public DbSet<Genre> Genres { get; set; }
+    public DbSet<Person> Persons { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

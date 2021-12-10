@@ -15,6 +15,8 @@ public class UnitOfWork : IUnitOfWork
     }
     public IGenreRepository Genres => new GenreRepository(_context);
 
+    public IPersonRepository Persons => new PersonRepository(_context);
+
     public async Task CommitAsync()
     {
         await _context.SaveChangesAsync();
