@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using Application.Exeption;
+using Domain.Data.Repositories;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;

@@ -2,7 +2,6 @@
 using Application.Genres;
 using Domain.DTO;
 using Domain.DTO.GenresDTO;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 

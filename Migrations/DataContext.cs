@@ -1,4 +1,5 @@
-﻿using Domain.Data.Entities;
+﻿using Domain;
+using Domain.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Migrations;
@@ -9,13 +10,9 @@ public class DataContext : DbContext
 
     }
 
-    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-    {
-        return base.SaveChangesAsync(cancellationToken);
-    }
-
     public DbSet<Genre> Genres { get; set; }
     public DbSet<Person> Persons { get; set; }
+    public DbSet<Photo> Photos { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -1,5 +1,7 @@
-﻿using AutoMapper;
+﻿using Application.Exeption;
+using AutoMapper;
 using Domain.Data;
+using Domain.Data.Repositories;
 using Domain.DTO.GenresDTO;
 using MediatR;
 
@@ -28,4 +30,3 @@ public class List
         }
     }
 }
-
