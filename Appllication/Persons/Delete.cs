@@ -1,7 +1,7 @@
 using Domain.Data;
 using MediatR;
 
-namespace Appllication.Persons;
+namespace Application.Persons;
 public class Delete
 {
     public class Command : IRequest

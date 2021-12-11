@@ -3,7 +3,7 @@ using Domain.Data;
 using Domain.DTO.GenresDTO;
 using MediatR;
 
-namespace Appllication.Genres;
+namespace Application.Genres;
 public class List
 {
     public class Query : IRequest<List<GenreDTO>>

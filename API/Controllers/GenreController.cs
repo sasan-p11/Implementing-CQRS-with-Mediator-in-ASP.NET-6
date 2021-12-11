@@ -1,13 +1,15 @@
-﻿using Appllication.Exeption;
-using Appllication.Genres;
+﻿using Application.Exeption;
+using Application.Genres;
 using Domain.DTO;
 using Domain.DTO.GenresDTO;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
 namespace API.Controllers;
 public class GenreController : HomeController
 {
+  
     [HttpGet]
     public async Task<ActionResult<List<GenreDTO>>> Get()
     {

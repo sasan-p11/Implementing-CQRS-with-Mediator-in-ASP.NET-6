@@ -1,12 +1,12 @@
 ﻿
-using Appllication.Exeption;
+using Application.Exeption;
 using Domain.Data;
 using Domain.Data.Entities;
 using Domain.DTO.GenresDTO;
 using FluentValidation;
 using MediatR;
 
-namespace Appllication.Genres;
+namespace Application.Genres;
 public class Create
 {
     public class Command : IRequest

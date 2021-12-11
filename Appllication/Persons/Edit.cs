@@ -1,11 +1,11 @@
-using Appllication.Exeption;
+using Application.Exeption;
 using Domain.Data;
 using Domain.Data.Entities;
 using Domain.DTO.PersonDTO;
 using FluentValidation;
 using MediatR;
 
-namespace Appllication.Persons;
+namespace Application.Persons;
 public class Edit
 {
     public class Command : IRequest

@@ -4,7 +4,7 @@ using Domain.Data;
 using Domain.DTO.GenresDTO;
 using MediatR;
 
-namespace Appllication.Genres;
+namespace Application.Genres;
 public class Details
 {
     public class Query : IRequest<GenreDTO>

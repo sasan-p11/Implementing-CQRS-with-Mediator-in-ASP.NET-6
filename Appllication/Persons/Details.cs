@@ -3,7 +3,7 @@ using Domain.Data;
 using Domain.DTO.PersonDTO;
 using MediatR;
 
-namespace Appllication.Persons;
+namespace Application.Persons;
 public class Details
 {
      public class Query : IRequest<PersonDTO>

@@ -2,7 +2,7 @@ using Domain.DTO.GenresDTO;
 using Domain.DTO.PersonDTO;
 using FluentValidation;
 
-namespace Appllication.Validators;
+namespace Application.Validators;
 public class PersonDTOValidator : AbstractValidator<PersonDTO>
 {
     public class CreatePersonDTOValidator : AbstractValidator<CreatePersonDTO>

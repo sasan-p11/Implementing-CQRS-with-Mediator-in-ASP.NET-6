@@ -1,7 +1,7 @@
 ﻿using Domain.DTO.GenresDTO;
 using FluentValidation;
 
-namespace Appllication.Validators;
+namespace Application.Validators;
 public class GenreDTOValidator : AbstractValidator<GenreDTO>
 {
     public class CreateGenreDTOValidator : AbstractValidator<CreateGenreDTO>

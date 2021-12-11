@@ -2,7 +2,7 @@ using Domain.Data;
 using Domain.DTO.GenresDTO;
 using MediatR;
 
-namespace Appllication.Genres;
+namespace Application.Genres;
 public class Delete
 {
     public class Command : IRequest

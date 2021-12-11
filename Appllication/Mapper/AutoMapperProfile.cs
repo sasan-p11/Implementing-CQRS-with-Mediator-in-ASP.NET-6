@@ -4,7 +4,7 @@ using Domain.Data.Entities;
 using Domain.DTO.GenresDTO;
 using Domain.DTO.PersonDTO;
 
-namespace Appllication.Mapper;
+namespace Application.Mapper;
 
 public class AutoMapperProfile : Profile
 {

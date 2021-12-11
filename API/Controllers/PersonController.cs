@@ -1,6 +1,6 @@
 using System.Net;
-using Appllication.Exeption;
-using Appllication.Persons;
+using Application.Exeption;
+using Application.Persons;
 using Domain.DTO;
 using Domain.DTO.GenresDTO;
 using Domain.DTO.PersonDTO;
