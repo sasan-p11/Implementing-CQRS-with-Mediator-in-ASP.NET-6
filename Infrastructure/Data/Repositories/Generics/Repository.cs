@@ -43,7 +43,6 @@ public class Repository<T> : IRepository<T> where T : class
         var x = _dbSet.Find(id);
         return x;
     }
-
     public IEnumerable<T> GetAll()
     {
         return _dbSet.AsEnumerable();
@@ -53,6 +52,11 @@ public class Repository<T> : IRepository<T> where T : class
     {
         _dbSet.Attach(entity);
         _context.Entry(entity).State = EntityState.Modified;
+    }
+
+    public void SaveChanges()
+    {
+        _context.SaveChanges();
     }
 }
 

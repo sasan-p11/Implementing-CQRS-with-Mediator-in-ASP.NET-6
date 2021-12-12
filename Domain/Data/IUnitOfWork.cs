@@ -9,7 +9,7 @@ public interface IUnitOfWork
     IPhotoAccessor  PhotoAccessor { get; }
     Task CommitAsync();
 
-    Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+    Task<int> SaveChangesAsync(CancellationToken cancellationToken=default(CancellationToken));
 
 }
 
