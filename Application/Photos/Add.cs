@@ -39,6 +39,10 @@ public class Add
 
             var result = await _repository.SaveChangesAsync(cancellationToken) > 0;
 
+            
+            _repository.PhotoAccessor.AddPhoto(photo);
+            await _repository.CommitAsync();
+
             if (result) return Result<PhotoDTO>.Success(photo);
 
             return Result<PhotoDTO>.Failure("Problem adding photo");

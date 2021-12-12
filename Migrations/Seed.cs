@@ -21,7 +21,8 @@ public static class ModelBuilderExtensions
                 Name = "John Doe",
                 Biography = "John Doe is a fictional character and the main protagonist of the fictional series The Walking Dead.",
                 DateOfBirth = new DateTime(1958, 1, 1),
-                Picture = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/John_Doe_%28The_Walking_Dead%29.png/220px-John_Doe_%28The_Walking_Dead%29.png"
+                Picture = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/John_Doe_%28The_Walking_Dead%29.png/220px-John_Doe_%28The_Walking_Dead%29.png",
+                PictureId = "qi9zcoygcctcpmqobyah"
             },
             new Person
             {
@@ -29,7 +30,8 @@ public static class ModelBuilderExtensions
                 Name = "Rick Grimes",
                 Biography = "Rick Grimes is a fictional character and the main protagonist of the fictional series The Walking Dead.",
                 DateOfBirth = new DateTime(1958, 1, 1),
-                Picture = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/John_Doe_%28The_Walking_Dead%29.png/220px-John_Doe_%28The_Walking_Dead%29.png"
+                Picture = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/John_Doe_%28The_Walking_Dead%29.png/220px-John_Doe_%28The_Walking_Dead%29.png",
+                PictureId = "qi9zcoygcctcpmqobyah"
             },
             new Person
             {
@@ -37,7 +39,8 @@ public static class ModelBuilderExtensions
                 Name = "Michonne",
                 Biography = "Michonne is a fictional character and the main protagonist of the fictional series The Walking Dead.",
                 DateOfBirth = new DateTime(1958, 1, 1),
-                Picture = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/John_Doe_%28The_Walking_Dead%29.png/220px-John_Doe_%28The_Walking_Dead%29.png"
+                Picture = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/John_Doe_%28The_Walking_Dead%29.png/220px-John_Doe_%28The_Walking_Dead%29.png",
+                PictureId = "qi9zcoygcctcpmqobyah"
             },
             new Person
             {
@@ -45,7 +48,8 @@ public static class ModelBuilderExtensions
                 Name = "Glenn Rhee",
                 Biography = "Glenn Rhee is a fictional character and the main protagonist of the fictional series The Walking Dead.",
                 DateOfBirth = new DateTime(1958, 1, 1),
-                Picture = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/John_Doe_%28The_Walking_Dead%29.png/220px-John_Doe_%28The_Walking_Dead%29.png"
+                Picture = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/John_Doe_%28The_Walking_Dead%29.png/220px-John_Doe_%28The_Walking_Dead%29.png",
+                PictureId = "qi9zcoygcctcpmqobyah"
             }
 
         );
