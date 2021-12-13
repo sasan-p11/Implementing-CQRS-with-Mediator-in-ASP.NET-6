@@ -8,7 +8,7 @@ public class Details
 {
      public class Query : IRequest<PersonDTO>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 
     public class Handler : IRequestHandler<Query, PersonDTO>

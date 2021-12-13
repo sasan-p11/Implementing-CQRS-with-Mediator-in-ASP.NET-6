@@ -28,7 +28,7 @@ public static class ServiceExtensions
         services.AddTransient<IPhotoAccessor, PhotoAccessor>();
         services.AddOptions();
         services.Configure<CloudinarySettings>(x => configuration.GetSection("cloudinary").Bind(x));
-        //services.Configure<CloudinarySettings>(configuration.GetSection("cloudinary"));
+        services.AddScoped<EmailSender>();
 
         return services;
     }

@@ -48,7 +48,11 @@ public class Create
                 Name = model.Name,
                 Biography = model.Biography,
                 DateOfBirth = model.DateOfBirth,
-                Picture = model.Picture,
+                Photo = new Photo
+                {
+                    Id = model.Photo.Id,
+                    Url = model.Photo.Url
+                },
             };
 
             _repository.Persons.Add(entity);

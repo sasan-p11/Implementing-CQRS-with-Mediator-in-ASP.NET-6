@@ -45,7 +45,7 @@ public class Edit
             
             var entity = new Genre
             {
-                Id = (int)model.Id,
+                Id = (Guid)model.Id,
                 Name = model.Name,
             };
 

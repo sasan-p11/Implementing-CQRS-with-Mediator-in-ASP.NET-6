@@ -1,7 +1,7 @@
 ﻿namespace Domain.DTO.GenresDTO;
 public class GenreDTO
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string Name { get; set; }
 }
 

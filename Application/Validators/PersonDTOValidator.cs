@@ -12,7 +12,7 @@ public class PersonDTOValidator : AbstractValidator<PersonDTO>
             RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
             RuleFor(x => x.Biography).NotEmpty().WithMessage("Biography is required");
             RuleFor(x => x.DateOfBirth).NotEmpty().WithMessage("DateOfBirth is required");
-            RuleFor(x => x.Picture).NotEmpty().WithMessage("Picture is required");
+            RuleFor(x => x.Photo).NotEmpty().WithMessage("Picture is required");
         }
     }
     public class EditPersonDTOValidator : AbstractValidator<EditPersonDTO>
@@ -22,7 +22,7 @@ public class PersonDTOValidator : AbstractValidator<PersonDTO>
             RuleFor(x => x.Name).NotEmpty().WithMessage("Name is required");
             RuleFor(x => x.Biography).NotEmpty().WithMessage("Biography is required");
             RuleFor(x => x.DateOfBirth).NotEmpty().WithMessage("DateOfBirth is required");
-            RuleFor(x => x.Picture).NotEmpty().WithMessage("Picture is required");
+            RuleFor(x => x.Photo).NotEmpty().WithMessage("Picture is required");
         }
     }
 }

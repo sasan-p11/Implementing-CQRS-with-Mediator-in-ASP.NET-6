@@ -7,8 +7,8 @@ public class Delete
 {
     public class Command : IRequest
     {
-        public int Id { get; set; }
-        public Command(int id)
+        public Guid Id { get; set; }
+        public Command(Guid id)
         {
             this.Id = id;
         }

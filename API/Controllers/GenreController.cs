@@ -16,7 +16,7 @@ public class GenreController : HomeController
     }
 
     [HttpGet("{id:int}")]
-    public async Task<ActionResult<GenreDTO>> Get(int id)
+    public async Task<ActionResult<GenreDTO>> Get(Guid id)
     {
         return Ok(await Mediator.Send(new Details.Query { Id = id}));
     }
@@ -41,7 +41,7 @@ public class GenreController : HomeController
     }
 
     [HttpPut("{id:int}")]
-    public async Task<ActionResult<int>> Edit(int id, [FromBody] EditGenreDTO model)
+    public async Task<ActionResult<int>> Edit(Guid id, [FromBody] EditGenreDTO model)
     {
         model.Id = id;
         try
@@ -61,7 +61,7 @@ public class GenreController : HomeController
     }
 
     [HttpDelete("{id:int}")]
-    public async Task<ActionResult<int>> Delete(int id)
+    public async Task<ActionResult<int>> Delete(Guid id)
     {
         try
         {

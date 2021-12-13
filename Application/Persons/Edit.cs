@@ -42,13 +42,17 @@ public class Edit
                     Errors = errors
                 };
             }
-            
+
             var entity = new Person
             {
-                Id = (int)model.Id,
+                Id = (Guid)model.Id,
                 Name = model.Name,
                 Biography = model.Biography,
-                Picture = model.Picture,
+                Photo = new Photo
+                {
+                    Id = model.Photo.Id,
+                    Url = model.Photo.Url
+                },
                 DateOfBirth = model.DateOfBirth,
             };
 

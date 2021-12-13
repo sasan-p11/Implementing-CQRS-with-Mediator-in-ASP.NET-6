@@ -1,6 +1,6 @@
+using API.Extentions;
 using Application;
 using Infrastructure;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 var config = builder.Configuration;
@@ -8,6 +8,7 @@ var config = builder.Configuration;
 builder.Services.AddPersistence(config);
 builder.Services.AddMoviesCore();
 builder.Services.AddApplicationServices(config);
+builder.Services.AddIdentityServices(config);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -22,7 +23,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseRouting();
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

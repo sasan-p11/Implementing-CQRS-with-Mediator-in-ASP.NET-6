@@ -1,10 +1,8 @@
-using Application.Exeption;
+
 using Domain.Data;
-using Domain.Data.Entities;
 using Domain.Data.Interfaces;
 using Domain.Data.Repositories;
-using Domain.DTO.PhotoDTO;
-using FluentValidation;
+using Domain.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 

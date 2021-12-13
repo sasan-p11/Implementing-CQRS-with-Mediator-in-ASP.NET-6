@@ -17,7 +17,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<PersonDTO>> Get(int id)
+        public async Task<ActionResult<PersonDTO>> Get(Guid id)
         {
             return Ok(await Mediator.Send(new Details.Query { Id = id }));
         }
@@ -42,7 +42,7 @@ namespace API.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult<int>> Edit(int id, [FromBody] EditPersonDTO model)
+        public async Task<ActionResult<int>> Edit(Guid id, [FromBody] EditPersonDTO model)
         {
             model.Id = id;
             try
@@ -62,7 +62,7 @@ namespace API.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult<int>> Delete(int id)
+        public async Task<ActionResult<int>> Delete(Guid id)
         {
             try
             {
